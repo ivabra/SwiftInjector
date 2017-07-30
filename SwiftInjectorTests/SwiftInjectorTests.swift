@@ -10,27 +10,36 @@ import XCTest
 @testable import SwiftInjector
 
 class SwiftInjectorTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+  
+  override func setUp() {
+    super.setUp()
+    InjectHolder.setFabric { (container, injector) in
+      container.addSingleton(SingletonComponent.self, factory: { SingletonComponentImpl() })
+      container.add(Component.self, factory: { ComponentImpl() })
     }
+    InjectHolder.inject()
+  }
+  
+  func testFabricInjection() {
+    let component1 = Inject.get(Component.self)
+    component1.value = "1"
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    let component2 = Inject.get(Component.self)
+    component2.value = "2"
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    XCTAssertNotEqual(component1.value, component2.value, "Values of each components should be not equals")
+    XCTAssert(component1 !== component2, "Objects should be not equals by reference")
+  }
+  
+  func testSingletonInjection() {
+    let component1 = Inject.get(SingletonComponent.self)
+    component1.value = "1"
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    let component2 = Inject.get(SingletonComponent.self)
+    component2.value = "2"
     
+    XCTAssertEqual(component1.value, component2.value, "Values of each components should be equals")
+    XCTAssert(component1 === component2, "Objects should be equals by reference")
+  }
+  
 }

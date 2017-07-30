@@ -7,12 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FA655D51F2E0D2800198F71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655D41F2E0D2800198F71 /* AppDelegate.swift */; };
+		9FA655D71F2E0D2800198F71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655D61F2E0D2800198F71 /* ViewController.swift */; };
+		9FA655DA1F2E0D2800198F71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA655D81F2E0D2800198F71 /* Main.storyboard */; };
+		9FA655DC1F2E0D2800198F71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA655DB1F2E0D2800198F71 /* Assets.xcassets */; };
+		9FA655DF1F2E0D2800198F71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA655DD1F2E0D2800198F71 /* LaunchScreen.storyboard */; };
+		9FA655F31F2E145600198F71 /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655F21F2E145600198F71 /* Default.swift */; };
+		9FA655F51F2E167B00198F71 /* ComponentsSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655F41F2E167B00198F71 /* ComponentsSpecs.swift */; };
+		9FA655F61F2E172F00198F71 /* SwiftInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC0CA291F2D2491004EE3B4 /* SwiftInjector.framework */; };
+		9FA655F71F2E172F00198F71 /* SwiftInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC0CA291F2D2491004EE3B4 /* SwiftInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FA655FC1F2E17C600198F71 /* MyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655FB1F2E17C600198F71 /* MyFileManager.swift */; };
 		9FC0CA331F2D2491004EE3B4 /* SwiftInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC0CA291F2D2491004EE3B4 /* SwiftInjector.framework */; };
 		9FC0CA381F2D2491004EE3B4 /* SwiftInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA371F2D2491004EE3B4 /* SwiftInjectorTests.swift */; };
 		9FC0CA3A1F2D2491004EE3B4 /* SwiftInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC0CA2C1F2D2491004EE3B4 /* SwiftInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FC0CA461F2D2512004EE3B4 /* InjectTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA451F2D2512004EE3B4 /* InjectTarget.swift */; };
+		9FC0CA481F2D2522004EE3B4 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA471F2D2522004EE3B4 /* Injector.swift */; };
+		9FC0CA4A1F2D255B004EE3B4 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA491F2D255B004EE3B4 /* Container.swift */; };
+		9FC0CA4C1F2D25B4004EE3B4 /* StandardContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA4B1F2D25B4004EE3B4 /* StandardContainer.swift */; };
+		9FC0CA4F1F2D25E8004EE3B4 /* TypeRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA4E1F2D25E8004EE3B4 /* TypeRegistrar.swift */; };
+		9FC0CA521F2D2623004EE3B4 /* TypedRegistrarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA511F2D2623004EE3B4 /* TypedRegistrarCell.swift */; };
+		9FC0CA541F2D2641004EE3B4 /* DefaultTypeRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA531F2D2641004EE3B4 /* DefaultTypeRegistrar.swift */; };
+		9FC0CA561F2D2677004EE3B4 /* SimpleTypedRegistrarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA551F2D2677004EE3B4 /* SimpleTypedRegistrarCell.swift */; };
+		9FC0CA581F2D2685004EE3B4 /* FactoryTypedRegistrarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA571F2D2685004EE3B4 /* FactoryTypedRegistrarCell.swift */; };
+		9FC0CA5A1F2D269B004EE3B4 /* SingletonTypedRegistrarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA591F2D269B004EE3B4 /* SingletonTypedRegistrarCell.swift */; };
+		9FC0CA5F1F2D27EA004EE3B4 /* InjectionHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA5E1F2D27EA004EE3B4 /* InjectionHolder.swift */; };
+		9FC0CA621F2D28BD004EE3B4 /* StandardInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA611F2D28BD004EE3B4 /* StandardInjector.swift */; };
+		9FC0CA651F2D3565004EE3B4 /* StandardInjectionHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC0CA641F2D3565004EE3B4 /* StandardInjectionHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9FA655F81F2E172F00198F71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FC0CA201F2D2491004EE3B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FC0CA281F2D2491004EE3B4;
+			remoteInfo = SwiftInjector;
+		};
 		9FC0CA341F2D2491004EE3B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FC0CA201F2D2491004EE3B4 /* Project object */;
@@ -22,16 +52,61 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9FA655FA1F2E172F00198F71 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FA655F71F2E172F00198F71 /* SwiftInjector.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9FA655D21F2E0D2800198F71 /* SwiftInjector-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftInjector-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA655D41F2E0D2800198F71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FA655D61F2E0D2800198F71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FA655D91F2E0D2800198F71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FA655DB1F2E0D2800198F71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FA655DE1F2E0D2800198F71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9FA655E01F2E0D2800198F71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA655F21F2E145600198F71 /* Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
+		9FA655F41F2E167B00198F71 /* ComponentsSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsSpecs.swift; sourceTree = "<group>"; };
+		9FA655FB1F2E17C600198F71 /* MyFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
 		9FC0CA291F2D2491004EE3B4 /* SwiftInjector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftInjector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC0CA2C1F2D2491004EE3B4 /* SwiftInjector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftInjector.h; sourceTree = "<group>"; };
 		9FC0CA2D1F2D2491004EE3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC0CA321F2D2491004EE3B4 /* SwiftInjectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftInjectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC0CA371F2D2491004EE3B4 /* SwiftInjectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftInjectorTests.swift; sourceTree = "<group>"; };
 		9FC0CA391F2D2491004EE3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC0CA451F2D2512004EE3B4 /* InjectTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectTarget.swift; sourceTree = "<group>"; };
+		9FC0CA471F2D2522004EE3B4 /* Injector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		9FC0CA491F2D255B004EE3B4 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Container.swift; path = SwiftInjector/Classes/Container.swift; sourceTree = SOURCE_ROOT; };
+		9FC0CA4B1F2D25B4004EE3B4 /* StandardContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardContainer.swift; path = ../StandardContainer.swift; sourceTree = "<group>"; };
+		9FC0CA4E1F2D25E8004EE3B4 /* TypeRegistrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeRegistrar.swift; sourceTree = "<group>"; };
+		9FC0CA511F2D2623004EE3B4 /* TypedRegistrarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedRegistrarCell.swift; sourceTree = "<group>"; };
+		9FC0CA531F2D2641004EE3B4 /* DefaultTypeRegistrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTypeRegistrar.swift; sourceTree = "<group>"; };
+		9FC0CA551F2D2677004EE3B4 /* SimpleTypedRegistrarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTypedRegistrarCell.swift; sourceTree = "<group>"; };
+		9FC0CA571F2D2685004EE3B4 /* FactoryTypedRegistrarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactoryTypedRegistrarCell.swift; sourceTree = "<group>"; };
+		9FC0CA591F2D269B004EE3B4 /* SingletonTypedRegistrarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonTypedRegistrarCell.swift; sourceTree = "<group>"; };
+		9FC0CA5E1F2D27EA004EE3B4 /* InjectionHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectionHolder.swift; sourceTree = "<group>"; };
+		9FC0CA611F2D28BD004EE3B4 /* StandardInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardInjector.swift; sourceTree = "<group>"; };
+		9FC0CA641F2D3565004EE3B4 /* StandardInjectionHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardInjectionHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9FA655CF1F2E0D2800198F71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA655F61F2E172F00198F71 /* SwiftInjector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FC0CA251F2D2491004EE3B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FA655D31F2E0D2800198F71 /* SwiftInjector-Example */ = {
+			isa = PBXGroup;
+			children = (
+				9FA655D41F2E0D2800198F71 /* AppDelegate.swift */,
+				9FA655D61F2E0D2800198F71 /* ViewController.swift */,
+				9FA655FB1F2E17C600198F71 /* MyFileManager.swift */,
+				9FA655D81F2E0D2800198F71 /* Main.storyboard */,
+				9FA655DB1F2E0D2800198F71 /* Assets.xcassets */,
+				9FA655DD1F2E0D2800198F71 /* LaunchScreen.storyboard */,
+				9FA655E01F2E0D2800198F71 /* Info.plist */,
+			);
+			path = "SwiftInjector-Example";
+			sourceTree = "<group>";
+		};
 		9FC0CA1F1F2D2491004EE3B4 = {
 			isa = PBXGroup;
 			children = (
 				9FC0CA2B1F2D2491004EE3B4 /* SwiftInjector */,
 				9FC0CA361F2D2491004EE3B4 /* SwiftInjectorTests */,
+				9FA655D31F2E0D2800198F71 /* SwiftInjector-Example */,
 				9FC0CA2A1F2D2491004EE3B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +154,7 @@
 			children = (
 				9FC0CA291F2D2491004EE3B4 /* SwiftInjector.framework */,
 				9FC0CA321F2D2491004EE3B4 /* SwiftInjectorTests.xctest */,
+				9FA655D21F2E0D2800198F71 /* SwiftInjector-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +162,7 @@
 		9FC0CA2B1F2D2491004EE3B4 /* SwiftInjector */ = {
 			isa = PBXGroup;
 			children = (
+				9FC0CA441F2D24B2004EE3B4 /* Classes */,
 				9FC0CA2C1F2D2491004EE3B4 /* SwiftInjector.h */,
 				9FC0CA2D1F2D2491004EE3B4 /* Info.plist */,
 			);
@@ -82,8 +174,70 @@
 			children = (
 				9FC0CA371F2D2491004EE3B4 /* SwiftInjectorTests.swift */,
 				9FC0CA391F2D2491004EE3B4 /* Info.plist */,
+				9FA655F41F2E167B00198F71 /* ComponentsSpecs.swift */,
 			);
 			path = SwiftInjectorTests;
+			sourceTree = "<group>";
+		};
+		9FC0CA441F2D24B2004EE3B4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA631F2D3552004EE3B4 /* Holder */,
+				9FC0CA601F2D28AB004EE3B4 /* Injector */,
+				9FC0CA5B1F2D2751004EE3B4 /* Container */,
+				9FC0CA4D1F2D25CD004EE3B4 /* Registrar */,
+				9FC0CA451F2D2512004EE3B4 /* InjectTarget.swift */,
+				9FA655F21F2E145600198F71 /* Default.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9FC0CA4D1F2D25CD004EE3B4 /* Registrar */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA501F2D2602004EE3B4 /* Cells */,
+				9FC0CA4E1F2D25E8004EE3B4 /* TypeRegistrar.swift */,
+				9FC0CA531F2D2641004EE3B4 /* DefaultTypeRegistrar.swift */,
+			);
+			path = Registrar;
+			sourceTree = "<group>";
+		};
+		9FC0CA501F2D2602004EE3B4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA511F2D2623004EE3B4 /* TypedRegistrarCell.swift */,
+				9FC0CA551F2D2677004EE3B4 /* SimpleTypedRegistrarCell.swift */,
+				9FC0CA571F2D2685004EE3B4 /* FactoryTypedRegistrarCell.swift */,
+				9FC0CA591F2D269B004EE3B4 /* SingletonTypedRegistrarCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9FC0CA5B1F2D2751004EE3B4 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA491F2D255B004EE3B4 /* Container.swift */,
+				9FC0CA4B1F2D25B4004EE3B4 /* StandardContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		9FC0CA601F2D28AB004EE3B4 /* Injector */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA471F2D2522004EE3B4 /* Injector.swift */,
+				9FC0CA611F2D28BD004EE3B4 /* StandardInjector.swift */,
+			);
+			name = Injector;
+			sourceTree = "<group>";
+		};
+		9FC0CA631F2D3552004EE3B4 /* Holder */ = {
+			isa = PBXGroup;
+			children = (
+				9FC0CA5E1F2D27EA004EE3B4 /* InjectionHolder.swift */,
+				9FC0CA641F2D3565004EE3B4 /* StandardInjectionHolder.swift */,
+			);
+			name = Holder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +254,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9FA655D11F2E0D2800198F71 /* SwiftInjector-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA655F01F2E0D2800198F71 /* Build configuration list for PBXNativeTarget "SwiftInjector-Example" */;
+			buildPhases = (
+				9FA655CE1F2E0D2800198F71 /* Sources */,
+				9FA655CF1F2E0D2800198F71 /* Frameworks */,
+				9FA655D01F2E0D2800198F71 /* Resources */,
+				9FA655FA1F2E172F00198F71 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA655F91F2E172F00198F71 /* PBXTargetDependency */,
+			);
+			name = "SwiftInjector-Example";
+			productName = "SwiftInjector-Example";
+			productReference = 9FA655D21F2E0D2800198F71 /* SwiftInjector-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9FC0CA281F2D2491004EE3B4 /* SwiftInjector */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FC0CA3D1F2D2491004EE3B4 /* Build configuration list for PBXNativeTarget "SwiftInjector" */;
@@ -146,9 +319,15 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Ivan Brazhnikov";
 				TargetAttributes = {
+					9FA655D11F2E0D2800198F71 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 55BKHE3292;
+						ProvisioningStyle = Automatic;
+					};
 					9FC0CA281F2D2491004EE3B4 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 55BKHE3292;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					9FC0CA311F2D2491004EE3B4 = {
@@ -164,6 +343,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9FC0CA1F1F2D2491004EE3B4;
 			productRefGroup = 9FC0CA2A1F2D2491004EE3B4 /* Products */;
@@ -172,11 +352,22 @@
 			targets = (
 				9FC0CA281F2D2491004EE3B4 /* SwiftInjector */,
 				9FC0CA311F2D2491004EE3B4 /* SwiftInjectorTests */,
+				9FA655D11F2E0D2800198F71 /* SwiftInjector-Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9FA655D01F2E0D2800198F71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA655DF1F2E0D2800198F71 /* LaunchScreen.storyboard in Resources */,
+				9FA655DC1F2E0D2800198F71 /* Assets.xcassets in Resources */,
+				9FA655DA1F2E0D2800198F71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FC0CA271F2D2491004EE3B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,10 +385,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9FA655CE1F2E0D2800198F71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA655FC1F2E17C600198F71 /* MyFileManager.swift in Sources */,
+				9FA655D71F2E0D2800198F71 /* ViewController.swift in Sources */,
+				9FA655D51F2E0D2800198F71 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FC0CA241F2D2491004EE3B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC0CA4F1F2D25E8004EE3B4 /* TypeRegistrar.swift in Sources */,
+				9FC0CA5F1F2D27EA004EE3B4 /* InjectionHolder.swift in Sources */,
+				9FC0CA461F2D2512004EE3B4 /* InjectTarget.swift in Sources */,
+				9FC0CA541F2D2641004EE3B4 /* DefaultTypeRegistrar.swift in Sources */,
+				9FC0CA561F2D2677004EE3B4 /* SimpleTypedRegistrarCell.swift in Sources */,
+				9FC0CA4A1F2D255B004EE3B4 /* Container.swift in Sources */,
+				9FC0CA5A1F2D269B004EE3B4 /* SingletonTypedRegistrarCell.swift in Sources */,
+				9FC0CA621F2D28BD004EE3B4 /* StandardInjector.swift in Sources */,
+				9FC0CA651F2D3565004EE3B4 /* StandardInjectionHolder.swift in Sources */,
+				9FA655F31F2E145600198F71 /* Default.swift in Sources */,
+				9FC0CA521F2D2623004EE3B4 /* TypedRegistrarCell.swift in Sources */,
+				9FC0CA4C1F2D25B4004EE3B4 /* StandardContainer.swift in Sources */,
+				9FC0CA581F2D2685004EE3B4 /* FactoryTypedRegistrarCell.swift in Sources */,
+				9FC0CA481F2D2522004EE3B4 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA655F51F2E167B00198F71 /* ComponentsSpecs.swift in Sources */,
 				9FC0CA381F2D2491004EE3B4 /* SwiftInjectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +428,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9FA655F91F2E172F00198F71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FC0CA281F2D2491004EE3B4 /* SwiftInjector */;
+			targetProxy = 9FA655F81F2E172F00198F71 /* PBXContainerItemProxy */;
+		};
 		9FC0CA351F2D2491004EE3B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FC0CA281F2D2491004EE3B4 /* SwiftInjector */;
@@ -219,7 +440,56 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9FA655D81F2E0D2800198F71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA655D91F2E0D2800198F71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FA655DD1F2E0D2800198F71 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA655DE1F2E0D2800198F71 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		9FA655EC1F2E0D2800198F71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 55BKHE3292;
+				INFOPLIST_FILE = "SwiftInjector-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dantelab.SwiftInjector-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9FA655ED1F2E0D2800198F71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 55BKHE3292;
+				INFOPLIST_FILE = "SwiftInjector-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dantelab.SwiftInjector-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		9FC0CA3B1F2D2491004EE3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -262,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -310,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -324,6 +594,8 @@
 		9FC0CA3E1F2D2491004EE3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 55BKHE3292;
@@ -336,6 +608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dantelab.SwiftInjector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +616,8 @@
 		9FC0CA3F1F2D2491004EE3B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 55BKHE3292;
@@ -362,6 +637,7 @@
 		9FC0CA411F2D2491004EE3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 55BKHE3292;
 				INFOPLIST_FILE = SwiftInjectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +650,7 @@
 		9FC0CA421F2D2491004EE3B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 55BKHE3292;
 				INFOPLIST_FILE = SwiftInjectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -386,6 +663,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9FA655F01F2E0D2800198F71 /* Build configuration list for PBXNativeTarget "SwiftInjector-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA655EC1F2E0D2800198F71 /* Debug */,
+				9FA655ED1F2E0D2800198F71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9FC0CA231F2D2491004EE3B4 /* Build configuration list for PBXProject "SwiftInjector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -402,6 +687,7 @@
 				9FC0CA3F1F2D2491004EE3B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FC0CA401F2D2491004EE3B4 /* Build configuration list for PBXNativeTarget "SwiftInjectorTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +696,7 @@
 				9FC0CA421F2D2491004EE3B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
