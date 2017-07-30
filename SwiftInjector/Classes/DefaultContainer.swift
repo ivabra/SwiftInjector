@@ -1,5 +1,5 @@
 //
-//  StandardContainer.swift
+//  DefaultContainer.swift
 //  SwiftInjector
 //
 //  Created by Ivan Brazhnikov on 29/07/2017.
@@ -8,17 +8,13 @@
 
 import Foundation
 
-public final class StandardContainer : Container {
+public final class DefaultContainer : Container {
   
-  fileprivate let registrar = DefaultTypeRegistar()
+  fileprivate let registrar = DefaultTypeRegistrar()
   
-  private lazy var localInjector: StandardInjector = {
-    StandardInjector(registrar: self.registrar)
+  private lazy var localInjector: DefaultInjector = {
+    DefaultInjector(registrar: self.registrar)
   }()
-  
-  public func add<T>(_ type: T.Type, object: T) {
-    registrar.add(type, object: object)
-  }
   
   public func add<T>(_ type: T.Type, factory: @escaping () -> T) {
     registrar.add(type, factory: factory)
@@ -50,8 +46,8 @@ public final class StandardContainer : Container {
   
 }
 
-public extension StandardContainer {
+public extension DefaultContainer {
   func makeInjector() -> Injector {
-    return StandardInjector(registrar: self.registrar)
+    return DefaultInjector(registrar: self.registrar)
   }
 }

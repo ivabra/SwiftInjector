@@ -1,5 +1,5 @@
 //
-//  StandardInjectionHolder.swift
+//  DefaultInjectionHolder.swift
 //  SwiftInjector
 //
 //  Created by Ivan Brazhnikov on 30/07/2017.
@@ -10,8 +10,8 @@ import Foundation
 
 final class DefaultInjectionHolder {
   
-  var container: Container = StandardContainer()
-  var injector: Injector = StandardInjector(registrar: DefaultTypeRegistar())
+  var container: Container = DefaultContainer()
+  var injector: Injector = DefaultInjector(registrar: DefaultTypeRegistrar())
   
   fileprivate var fabric: (Container, Injector) -> Void = { _,_ in }
 }
@@ -23,7 +23,7 @@ extension DefaultInjectionHolder : InjectionHolder {
   }
   
   public func inject() {
-    let container = StandardContainer()
+    let container = DefaultContainer()
     let injector = container.makeInjector()
     fabric(container, injector)
     self.container = container

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Cell for containing simple object dependecy
 struct SimpleTypedRegistrarCell : TypeRegistrarCell {
   var object: Any
   func getInstance() -> Any {

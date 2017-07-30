@@ -1,5 +1,5 @@
 //
-//  StandardInjector.swift
+//  DefaultInjector.swift
 //  SwiftInjector
 //
 //  Created by Ivan Brazhnikov on 29/07/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class StandardInjector : Injector {
+public final class DefaultInjector : Injector {
   
   let registrar: TypeRegistrar
   

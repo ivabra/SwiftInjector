@@ -9,7 +9,11 @@
 import Foundation
 
 private let _InjectHolder = DefaultInjectionHolder()
+
+/// Default injection holder
 public var InjectHolder: InjectionHolder { return _InjectHolder }
+
+/// Default global injector
 public var Inject: Injector = ProxyInjector { _InjectHolder.injector }
 
 final class ProxyInjector : Injector {
@@ -25,6 +29,8 @@ final class ProxyInjector : Injector {
   }
 }
 
+/// Like `InjectTarget` but injection default global injector 
+/// that can be accessed by global `Inject` properly
 public protocol DefaultInjectTarget: InjectTarget { }
 
 extension DefaultInjectTarget {

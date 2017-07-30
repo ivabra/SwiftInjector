@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     InjectHolder.setFabric { container, _ in
-      container.addSingleton(MyFileManager.self) {
-        let fm = DefaultMyFileManager()
+      container.addSingleton(DocumentsManager.self) {
+        let fm = DefaultDocumentsManager()
         fm.createDocument(name: "Sample Document 1.txt", contents: "Sample text".data(using: .utf8)!)
         fm.createDocument(name: "Sample Document 2.txt", contents: "Sample text 2".data(using: .utf8)!)
         return fm
@@ -25,7 +25,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     InjectHolder.inject()
     return true
   }
-
-
 }
 

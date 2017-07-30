@@ -1,6 +1,6 @@
 //
-//  SwiftInjectorTests.swift
-//  SwiftInjectorTests
+//  InjectHolderTests.swift
+//  SwiftInjector
 //
 //  Created by Ivan Brazhnikov on 29/07/2017.
 //  Copyright © 2017 Ivan Brazhnikov. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SwiftInjector
 
-class SwiftInjectorTests: XCTestCase {
+final class InjectHolderTests: XCTestCase {
   
   override func setUp() {
     super.setUp()

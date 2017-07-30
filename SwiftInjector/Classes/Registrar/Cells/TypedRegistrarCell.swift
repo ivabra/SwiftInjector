@@ -8,7 +8,9 @@
 
 import Foundation
 
+/// Cell that contains single dependecy
 protocol TypeRegistrarCell {
+  /// Getting instance of object that resolves dependency
   mutating func getInstance() -> Any
 }
 

@@ -9,7 +9,6 @@
 import Foundation
 
 public protocol Container {
-  func add<T>(_ type: T.Type, object: T)
   func add<T>(_ type: T.Type, factory: @escaping ()->T)
   func add<T>(_ type: T.Type, factory: @escaping (_ resolver: Injector)->T)
   func addSingleton<T>(_ type: T.Type, object: T)

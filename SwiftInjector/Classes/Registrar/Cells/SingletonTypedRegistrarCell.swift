@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Cell for containing singleton dependecy
 struct SingletonTypedRegistrarCell: TypeRegistrarCell {
   
   var factory: () -> Any

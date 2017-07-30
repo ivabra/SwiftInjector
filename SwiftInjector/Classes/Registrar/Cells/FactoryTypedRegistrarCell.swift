@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Cell for containing factory dependency
 struct FactoryTypedRegistrarCell: TypeRegistrarCell {
   var factory: () -> Any
   func getInstance() -> Any {

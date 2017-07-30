@@ -8,11 +8,11 @@
 
 import Foundation
 
-final class DefaultTypeRegistar : TypeRegistrar {
+final class DefaultTypeRegistrar : TypeRegistrar {
   
   var storage: [Int : TypeRegistrarCell] = [:]
   
-  func add<T>(_ type: T.Type, object: T) {
+  func addSingleton<T>(_ type: T.Type, object: T) {
     let key = mapTypeToKey(type)
     storage[key] = SimpleTypedRegistrarCell(object: object)
   }
@@ -43,10 +43,5 @@ final class DefaultTypeRegistar : TypeRegistrar {
   private func mapTypeToKey<T>(_ type: T.Type) -> Int {
     return ObjectIdentifier(type).hashValue
   }
-  
- 
-  
-  
-  
   
 }

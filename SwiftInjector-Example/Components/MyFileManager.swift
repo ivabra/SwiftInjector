@@ -1,5 +1,5 @@
 //
-//  MyFileManager.swift
+//  DocumentsManager.swift
 //  SwiftInjector
 //
 //  Created by Ivan Brazhnikov on 30/07/2017.
@@ -8,15 +8,23 @@
 
 import Foundation
 
-protocol MyFileManager {
+/// Simple file manager
+protocol DocumentsManager {
+  
+  /// All documents in the app directory
   var allDocuments: [URL] { get }
+  
+  /// Deleting document at url
   @discardableResult
   func removeDocument(at url: URL) -> Bool
+  
+  /// Create document with name and it contents
   @discardableResult
   func createDocument(name: String, contents: Data) -> URL?
 }
 
-final class DefaultMyFileManager: MyFileManager {
+/// Default DocumentsManager implementation
+final class DefaultDocumentsManager: DocumentsManager {
   let fm = FileManager.default
   
   lazy var documentsDirectoryURL: URL = {
