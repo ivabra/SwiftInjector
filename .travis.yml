@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: SwiftInjector.xcodeproj
+xcode_scheme: SwiftInjectorTests
+osx_image: xcode8.3
