@@ -1,6 +1,6 @@
 language: objective-c
 xcode_project: SwiftInjector.xcodeproj
-xcode_scheme: SwiftInjectorTests
+xcode_scheme: SwiftInjector
 osx_image: xcode8.3
 before_install:
   - brew update
