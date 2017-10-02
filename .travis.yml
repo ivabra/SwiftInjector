@@ -1,0 +1,9 @@
+language: objective-c
+xcode_project: SwiftInjector.xcodeproj
+xcode_scheme: SwiftInjector
+osx_image: xcode8.3
+before_install:
+  - brew update
+  - brew outdated xcodebuild || brew upgrade xcodebuild
+script:
+    - xcodebuild clean build test -sdk iphonesimulator -project SwiftInjectorTests.xcodeproj -scheme SwiftInjector CODE_SIGNING_REQUIRED=NO
