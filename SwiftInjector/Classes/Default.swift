@@ -27,6 +27,10 @@ final class ProxyInjector : Injector {
   func get<T>(_ type: T.Type) -> T {
     return injector().get(type)
   }
+  
+  func getIfRegistered<T>(_ type: T.Type) -> T? {
+    return injector().getIfRegistered(type)
+  }
 }
 
 /// Like `InjectTarget` but injection default global injector 

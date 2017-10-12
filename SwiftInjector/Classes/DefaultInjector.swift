@@ -17,6 +17,15 @@ public final class DefaultInjector : Injector {
   }
   
   public func get<T>(_ type: T.Type) -> T {
-    return registrar.resolve(type)
+   return try! registrar.resolve(type)
+  }
+  
+  public func getIfRegistered<T>(_ type: T.Type) -> T? {
+    do {
+      return try registrar.resolve(type)
+    } catch {
+      NSLog("Error when resolving dependency \(type), %@", error as NSError)
+      return nil
+    }
   }
 }

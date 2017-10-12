@@ -16,6 +16,13 @@ public protocol Injector: class {
    - Throws: Fatal error if dependency cannon be resolved 
    */
   func get<T>(_ type: T.Type) -> T
+  
+  /** Dependency resolving
+   - Parameters:
+   - type: Type that uniquely identity the dependency
+   - Returns: Object that conforming to this dependency or `nil`
+   */
+  func getIfRegistered<T>(_ type: T.Type) -> T?
 }
 
 public extension Injector {
@@ -27,5 +34,15 @@ public extension Injector {
    */
   func lazyGet<T>(_ type: T.Type) -> () -> T {
     return { self.get(type) }
+  }
+  
+  /** Lazy injection
+   - Parameters:
+   - type: Type that uniquely identity the dependency
+   - Returns: Closure that can be used for lazy variable initialization.
+   If dependency cannot be resolved, closure call retuns nil
+   */
+  func lazyGetIfRegistered<T>(_ type: T.Type) -> () -> T? {
+    return { self.getIfRegistered(type) }
   }
 }

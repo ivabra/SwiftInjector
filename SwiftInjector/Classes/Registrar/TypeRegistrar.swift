@@ -11,7 +11,11 @@ import Foundation
 /// The registrar that contains all dependencies
 public protocol TypeRegistrar : class {
   /// Resolving dependency
-  func resolve<T: Any>(_ type: T.Type) -> T
+  /// - Parameters:
+  ///   - type:     Type that uniquely identifies the dependency
+  /// - Returns: Object that conforming to this dependency
+  /// - Throws: Error is type cannot be resolved
+  func resolve<T: Any>(_ type: T.Type) throws -> T
   
   /// Adding dependency with factory closure
   /// - Parameters:

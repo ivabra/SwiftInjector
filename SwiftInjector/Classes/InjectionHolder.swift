@@ -17,6 +17,8 @@ public protocol InjectionHolder : class {
   func setFabric(_ fabric: @escaping (Container, Injector) -> Void)
   /// Clears all injection and calls `fabric` closure to fill dependecy container.
   func inject()
+  
+  func change(_ changeBlock: (Container) -> Void)
 }
 
 

@@ -29,5 +29,9 @@ extension DefaultInjectionHolder : InjectionHolder {
     self.container = container
     self.injector = injector
   }
+  
+  func change(_ changeBlock: (Container) -> Void) {
+    changeBlock(container)
+  }
 
 }
