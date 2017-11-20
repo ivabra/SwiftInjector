@@ -12,7 +12,19 @@ protocol Component: class {
   var value: String { get set }
 }
 
+protocol Component1: class {
+  var value: String { get set }
+}
+
+protocol Component2: class {
+  var value: String { get set }
+}
+
 final class ComponentImpl : Component {
+  var value: String = ""
+}
+
+final class Component1Impl : Component1 {
   var value: String = ""
 }
 

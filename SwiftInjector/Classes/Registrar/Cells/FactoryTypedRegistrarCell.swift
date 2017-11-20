@@ -9,9 +9,16 @@
 import Foundation
 
 /// Cell for containing factory dependency
-struct FactoryTypedRegistrarCell: TypeRegistrarCell {
-  var factory: () -> Any
+final class FactoryTypedRegistrarCell<T>: TypeRegistrarCell {
+  
+  let factory: () -> T
+  
+  init(factory: @escaping () -> T) {
+    self.factory = factory
+  }
+  
   func getInstance() -> Any {
     return factory()
   }
+  
 }

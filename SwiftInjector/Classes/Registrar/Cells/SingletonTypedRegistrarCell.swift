@@ -9,19 +9,29 @@
 import Foundation
 
 /// Cell for containing singleton dependecy
-struct SingletonTypedRegistrarCell: TypeRegistrarCell {
+final class SingletonTypedRegistrarCell<T>: TypeRegistrarCell {
   
-  var factory: () -> Any
-  var cache: Any?
+  private let factory: () -> T
+  private var cache: T!
   
-  init(factory: @escaping ()->Any) {
+  init(factory: @escaping () -> T) {
     self.factory = factory
   }
   
-  mutating func getInstance() -> Any {
+  func getTypedInstance() -> T {
     if cache == nil {
       cache = factory()
     }
-    return cache!
+    return cache
+  }
+  
+  func getInstance() -> Any {
+    return getTypedInstance()
+  }
+}
+
+extension SingletonTypedRegistrarCell {
+  var isCalledOnce: Bool {
+    return cache != nil
   }
 }
