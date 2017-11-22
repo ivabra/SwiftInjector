@@ -11,6 +11,11 @@ import Foundation
 /// Cell that contains single dependecy
 protocol TypeRegistrarCell: class {
   /// Getting instance of object that resolves dependency
-  func getInstance() -> Any
+  func getInstance(args: [Any]) -> Any
 }
 
+extension TypeRegistrarCell {
+  func getInstance() -> Any {
+    return getInstance(args: [])
+  }
+}

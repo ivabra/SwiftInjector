@@ -25,7 +25,7 @@ final class SingletonTypedRegistrarCell<T>: TypeRegistrarCell {
     return cache
   }
   
-  func getInstance() -> Any {
+  func getInstance(args: [Any]) -> Any {
     return getTypedInstance()
   }
 }

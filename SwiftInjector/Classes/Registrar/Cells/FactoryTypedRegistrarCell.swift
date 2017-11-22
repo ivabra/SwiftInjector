@@ -11,14 +11,14 @@ import Foundation
 /// Cell for containing factory dependency
 final class FactoryTypedRegistrarCell<T>: TypeRegistrarCell {
   
-  let factory: () -> T
+  let factory: ([Any]) -> T
   
-  init(factory: @escaping () -> T) {
+  init(factory: @escaping ([Any]) -> T) {
     self.factory = factory
   }
   
-  func getInstance() -> Any {
-    return factory()
+  func getInstance(args: [Any]) -> Any {
+    return factory(args)
   }
   
 }

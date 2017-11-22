@@ -33,19 +33,19 @@ final class DefaultTypeRegistrar : TypeRegistrar {
     synchronizationQueue = DispatchQueue(label: "com.dantelab.SwiftInjector.\(type(of: self)).queue-synchronization-\(ObjectIdentifier(self).hashValue)", qos: .default, attributes: .concurrent, target: DispatchQueue.global(qos: .default))
   }
   
-  func addSingleton<T>(_ type: T.Type, object: T) {
-    setCell(SimpleTypedRegistrarCell(object: object), forKey: mapTypeToKey(type))
+  func add<T>(_ type: T.Type, factory: @escaping (_ args: [Any]) -> T) {
+    setCell(FactoryTypedRegistrarCell(factory: factory), forKey: mapTypeToKey(type))
   }
   
-  func add<T>(_ type: T.Type, factory: @escaping () -> T) {
-    setCell(FactoryTypedRegistrarCell(factory: factory), forKey: mapTypeToKey(type))
+  func addSingleton<T>(_ type: T.Type, object: T) {
+    setCell(SimpleTypedRegistrarCell(object: object), forKey: mapTypeToKey(type))
   }
   
   func addSingletone<T>(_ type: T.Type, factory: @escaping () -> T) {
     setCell(SingletonTypedRegistrarCell(factory: factory), forKey: mapTypeToKey(type))
   }
   
-  func resolve<T>(_ type: T.Type) throws -> T {
+  func resolve<T>(_ type: T.Type, args: [Any]) throws -> T {
     let key = mapTypeToKey(type)
     guard let cell = readCell(forKey: key) else {
       throw LocalError.typeIsNotRegistered(type: type)
@@ -55,7 +55,7 @@ final class DefaultTypeRegistrar : TypeRegistrar {
         singltonCell.getTypedInstance()
       }
     }
-    let object = cell.getInstance()
+    let object = cell.getInstance(args: args)
     guard let typedObject = object as? T else {
       throw LocalError.objectCannotBeConvertedToType(object: object, type: type)
     }

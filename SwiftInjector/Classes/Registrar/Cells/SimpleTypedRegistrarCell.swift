@@ -17,7 +17,7 @@ final class SimpleTypedRegistrarCell<T> : TypeRegistrarCell {
     self.object = object
   }
   
-  func getInstance() -> Any {
+  func getInstance(args: [Any]) -> Any {
     return object
   }
 }

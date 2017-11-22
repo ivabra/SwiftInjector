@@ -17,19 +17,18 @@ public var InjectHolder: InjectionHolder { return _InjectHolder }
 public var Inject: Injector = ProxyInjector { _InjectHolder.injector }
 
 final class ProxyInjector : Injector {
-  
   let injector: () -> Injector
   
   init(proxied: @escaping () -> Injector) {
     self.injector = proxied
   }
   
-  func get<T>(_ type: T.Type) -> T {
-    return injector().get(type)
+  func get<T>(_ type: T.Type, args: [Any]) -> T {
+    return injector().get(type, args: args)
   }
   
-  func getIfRegistered<T>(_ type: T.Type) -> T? {
-    return injector().getIfRegistered(type)
+  func opt<T>(_ type: T.Type, args: [Any]) -> T? {
+    return injector().opt(type, args: args)
   }
 }
 
