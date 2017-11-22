@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "SwiftInjector"
-  s.version      = "1.0.1"
+  s.version      = "1.0.3"
   s.summary      = "Simple dependency injection solution for Cocoa projects"
 
   s.description  = <<-DESC
