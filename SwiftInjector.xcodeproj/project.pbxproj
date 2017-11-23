@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F93D7551FC5DD8600F41B15 /* Synchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F93D7541FC5DD8600F41B15 /* Synchronization.swift */; };
 		9FA655D51F2E0D2800198F71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655D41F2E0D2800198F71 /* AppDelegate.swift */; };
 		9FA655D71F2E0D2800198F71 /* LocalInjectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA655D61F2E0D2800198F71 /* LocalInjectingViewController.swift */; };
 		9FA655DA1F2E0D2800198F71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA655D81F2E0D2800198F71 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F93D7541FC5DD8600F41B15 /* Synchronization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronization.swift; sourceTree = "<group>"; };
 		9FA655D21F2E0D2800198F71 /* SwiftInjector-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftInjector-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA655D41F2E0D2800198F71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FA655D61F2E0D2800198F71 /* LocalInjectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalInjectingViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				9FC0CA451F2D2512004EE3B4 /* InjectTarget.swift */,
 				9FDFF12F1F2E7E1500154F39 /* TypeInjectTarget.swift */,
 				9FA655F21F2E145600198F71 /* Default.swift */,
+				9F93D7541FC5DD8600F41B15 /* Synchronization.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			files = (
 				9FDFF1301F2E7E1500154F39 /* TypeInjectTarget.swift in Sources */,
 				9FC0CA4F1F2D25E8004EE3B4 /* TypeRegistrar.swift in Sources */,
+				9F93D7551FC5DD8600F41B15 /* Synchronization.swift in Sources */,
 				9FC0CA5F1F2D27EA004EE3B4 /* InjectionHolder.swift in Sources */,
 				9FC0CA461F2D2512004EE3B4 /* InjectTarget.swift in Sources */,
 				9FC0CA541F2D2641004EE3B4 /* DefaultTypeRegistrar.swift in Sources */,

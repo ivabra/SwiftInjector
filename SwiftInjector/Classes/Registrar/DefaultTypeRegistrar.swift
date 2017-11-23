@@ -51,7 +51,7 @@ final class DefaultTypeRegistrar : TypeRegistrar {
       throw LocalError.typeIsNotRegistered(type: type)
     }
     if let singltonCell = cell as? SingletonTypedRegistrarCell<T>, singltonCell.isCalledOnce == false {
-      return synchronizationQueue.sync(flags: .barrier) {
+      return write {
         singltonCell.getTypedInstance()
       }
     }
@@ -63,38 +63,60 @@ final class DefaultTypeRegistrar : TypeRegistrar {
   }
   
   private func setCell(_ cell: TypeRegistrarCell, forKey key: Key) {
-    synchronizationQueue.sync(flags: .barrier) {
+    write {
       storage[key] = cell
     }
   }
   
-  private func readCellValue<T>(ofType type: T.Type, forKey key: Key) throws -> T {
-    let key = mapTypeToKey(type)
-    return try synchronizationQueue.sync {
-      guard let cell = readCell(forKey: key) else {
-        throw LocalError.typeIsNotRegistered(type: type)
-      }
-      let object = cell.getInstance()
-      guard let typedObject = object as? T else {
-        throw LocalError.objectCannotBeConvertedToType(object: object, type: type)
-      }
-      return typedObject
-    }
-  }
+//  private func readCellValue<T>(ofType type: T.Type, forKey key: Key) throws -> T {
+//    let key = mapTypeToKey(type)
+//    return try synchronizationQueue.sync {
+//      guard let cell = readCell(forKey: key) else {
+//        throw LocalError.typeIsNotRegistered(type: type)
+//      }
+//      let object = cell.getInstance()
+//      guard let typedObject = object as? T else {
+//        throw LocalError.objectCannotBeConvertedToType(object: object, type: type)
+//      }
+//      return typedObject
+//    }
+//  }
   
   private func readCell(forKey key: Key) -> TypeRegistrarCell? {
-    return synchronizationQueue.sync { storage[key] }
+    return read { storage[key] }
   }
   
-  private func readStorage<T>(_ block:  ([Key : TypeRegistrarCell]) throws -> T) rethrows -> T {
-    return try synchronizationQueue.sync {
-      try block(storage)
+//  private func readStorage<T>(_ block:  ([Key : TypeRegistrarCell]) throws -> T) rethrows -> T {
+//    return read {
+//      try block(storage)
+//    }
+//  }
+  
+  private func writeStorage(block: (inout [Key : TypeRegistrarCell]) throws -> Void) rethrows {
+    try write {
+      try block(&storage)
     }
   }
   
-  private func writeStorage(block: (inout [Key : TypeRegistrarCell]) throws -> Void) rethrows {
-    try synchronizationQueue.sync(flags: .barrier) {
-      try block(&storage)
+  private func read<T>(block: () throws -> T) rethrows -> T {
+    let currentLabel = DispatchQueue.currentLabel
+    print("read -> current", currentLabel)
+    print("read -> sync", synchronizationQueue.label)
+    if DispatchQueue.main.label == currentLabel || synchronizationQueue.label == currentLabel {
+      return try block()
+    } else {
+      return try synchronizationQueue.sync(execute: block)
+    }
+  }
+  
+  private func write<T>(block: () throws -> T) rethrows -> T {
+    let currentLabel = DispatchQueue.currentLabel
+    print("write -> current", currentLabel)
+    print("write -> sync", synchronizationQueue.label)
+    if DispatchQueue.main.label == currentLabel || synchronizationQueue.label == currentLabel {
+      return try block()
+    } else {
+      return try synchronizationQueue.sync(flags: .barrier, execute: block)
     }
   }
   
