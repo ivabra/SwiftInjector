@@ -100,8 +100,6 @@ final class DefaultTypeRegistrar : TypeRegistrar {
   
   private func read<T>(block: () throws -> T) rethrows -> T {
     let currentLabel = DispatchQueue.currentLabel
-    print("read -> current", currentLabel)
-    print("read -> sync", synchronizationQueue.label)
     if DispatchQueue.main.label == currentLabel || synchronizationQueue.label == currentLabel {
       return try block()
     } else {
@@ -111,8 +109,6 @@ final class DefaultTypeRegistrar : TypeRegistrar {
   
   private func write<T>(block: () throws -> T) rethrows -> T {
     let currentLabel = DispatchQueue.currentLabel
-    print("write -> current", currentLabel)
-    print("write -> sync", synchronizationQueue.label)
     if DispatchQueue.main.label == currentLabel || synchronizationQueue.label == currentLabel {
       return try block()
     } else {
