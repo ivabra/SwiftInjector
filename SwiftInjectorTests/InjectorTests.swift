@@ -40,4 +40,25 @@ final class InjectorTests: XCTestCase {
     XCTAssert(o1 === o2, "Objects should be equals")
   }
   
+  func testSynchronization() {
+    container.addSingleton(SingletonComponent.self) { SingletonComponentImpl() }
+    container.add(Component.self) { ComponentImpl() }
+    container.addSingleton(Component1.self, object: Component1Impl())
+    let injector = container.makeInjector()
+    let group = DispatchGroup()
+    for _ in 0..<100000 {
+      DispatchQueue.global().async(group: group) {
+        let s1 = injector.get(SingletonComponent.self)
+        let s2 = injector.get(Component.self)
+        let s3 = injector.get(Component1.self)
+        (_, _, _) = (s1, s2, s3)
+      }
+    }
+    let exp = expectation(description: "waiting for group")
+    DispatchQueue.global().async(group: group, qos: .default, flags: .barrier) {
+      exp.fulfill()
+    }
+    wait(for: [exp], timeout: 60)
+  }
+  
 }

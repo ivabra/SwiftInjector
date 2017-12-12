@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "SwiftInjector"
-  s.version      = "1.0.0"
+  s.version      = "1.0.3"
   s.summary      = "Simple dependency injection solution for Cocoa projects"
 
   s.description  = <<-DESC
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source_files  = "SwiftInjector/Classes", "SwiftInjector/Classes/**/*.{h,m,swift}"
-  s.public_header_files = "SwiftInjector/**/*.h"
+  s.source_files  = "SwiftInjector", "SwiftInjector/Classes/**/*.{h,m,swift}"
+  s.public_header_files = "SwiftInjector/*.h"
 
 end

@@ -16,6 +16,8 @@ final class InjectHolderTests: XCTestCase {
     InjectHolder.setFabric { (container, injector) in
       container.addSingleton(SingletonComponent.self, factory: { SingletonComponentImpl() })
       container.add(Component.self, factory: { ComponentImpl() })
+      container.add(Component1.self, factory: { Component1Impl() })
+      container.add(Component1Impl.self, factory: { Component1Impl() })
     }
     InjectHolder.inject()
   }
@@ -40,6 +42,17 @@ final class InjectHolderTests: XCTestCase {
     
     XCTAssertEqual(component1.value, component2.value, "Values of each components should be equals")
     XCTAssert(component1 === component2, "Objects should be equals by reference")
+  }
+  
+  func testClassAndProtocolInjection() {
+    let component1 = Inject.get(Component1Impl.self)
+    component1.value = "1"
+    
+    let component2 = Inject.get(Component1.self)
+    component2.value = "2"
+    
+    XCTAssertNotEqual(component1.value, component2.value, "Values of each components should be equals")
+    XCTAssert(component1 !== component2, "Objects should be equals by reference")
   }
   
 }

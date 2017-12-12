@@ -9,9 +9,15 @@
 import Foundation
 
 /// Cell for containing simple object dependecy
-struct SimpleTypedRegistrarCell : TypeRegistrarCell {
-  var object: Any
-  func getInstance() -> Any {
+final class SimpleTypedRegistrarCell<T> : TypeRegistrarCell {
+
+  let object: T
+  
+  init(object: T) {
+    self.object = object
+  }
+  
+  func getInstance(args: [Any]) -> Any {
     return object
   }
 }

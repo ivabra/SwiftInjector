@@ -15,15 +15,11 @@ public final class DefaultContainer : Container {
   private lazy var localInjector: DefaultInjector = {
     DefaultInjector(registrar: self.registrar)
   }()
-  
-  public func add<T>(_ type: T.Type, factory: @escaping () -> T) {
-    registrar.add(type, factory: factory)
-  }
-  
-  public func add<T>(_ type: T.Type, factory: @escaping (Injector) -> T) {
+
+  public func add<T>(_ type: T.Type, factory: @escaping (Injector, [Any]) -> T) {
     let resolver = localInjector
-    registrar.add(type) { () -> T in
-      let object = factory(resolver)
+    registrar.add(type) { (args: [Any]) -> T in
+      let object = factory(resolver, args)
       return object
     }
   }

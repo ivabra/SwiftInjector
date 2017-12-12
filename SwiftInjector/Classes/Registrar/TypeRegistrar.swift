@@ -10,15 +10,22 @@ import Foundation
 
 /// The registrar that contains all dependencies
 public protocol TypeRegistrar : class {
+  
   /// Resolving dependency
-  func resolve<T: Any>(_ type: T.Type) -> T
+  /// - Parameters:
+  ///   - type:     Type that uniquely identifies the dependency
+  ///   - args:     Arguments for build new instance of dependency
+  /// - Returns: Object that conforming to this dependency
+  /// - Throws: Error is type cannot be resolved
+  func resolve<T: Any>(_ type: T.Type, args: [Any]) throws -> T
   
   /// Adding dependency with factory closure
   /// - Parameters:
   ///   - type:     Type that uniquely identifies the dependency
   ///
   ///   - factory:  The fabric closure that makes object for every dependency resolving
-  func add<T>(_ type: T.Type, factory: @escaping ()->T)
+  ///   - args: Arguments fror building the a instance of dependency
+  func add<T>(_ type: T.Type, factory: @escaping (_ args: [Any])->T)
   
   /// Adding singletone dependency with factory closure
   /// - Parameters:
@@ -33,4 +40,23 @@ public protocol TypeRegistrar : class {
   ///   - type: Type that uniquely identifies the dependency
   ///   - object: The object that should resolve this dependecy
   func addSingleton<T>(_ type: T.Type, object: T)
+}
+
+extension TypeRegistrar {
+  /// Resolving dependency
+  /// - Parameters:
+  ///   - type:     Type that uniquely identifies the dependency
+  /// - Returns: Object that conforming to this dependency
+  /// - Throws: Error is type cannot be resolved
+  func resolve<T: Any>(_ type: T.Type) throws -> T {
+    return try resolve(type, args: [])
+  }
+  /// Adding dependency with factory closure
+  /// - Parameters:
+  ///   - type:     Type that uniquely identifies the dependency
+  ///
+  ///   - factory:  The fabric closure that makes object for every dependency resolving
+  func add<T>(_ type: T.Type, factory: @escaping ()->T) {
+    add(type) { factory() }
+  }
 }
