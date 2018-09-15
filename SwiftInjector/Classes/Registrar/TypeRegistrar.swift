@@ -42,7 +42,7 @@ public protocol TypeRegistrar : class {
   func addSingleton<T>(_ type: T.Type, object: T)
 }
 
-extension TypeRegistrar {
+public extension TypeRegistrar {
   /// Resolving dependency
   /// - Parameters:
   ///   - type:     Type that uniquely identifies the dependency
@@ -57,6 +57,6 @@ extension TypeRegistrar {
   ///
   ///   - factory:  The fabric closure that makes object for every dependency resolving
   func add<T>(_ type: T.Type, factory: @escaping ()->T) {
-    add(type) { factory() }
+    add(type) { _ in factory() }
   }
 }
